@@ -1,0 +1,15 @@
+name: src
+description: A widget with Redux which can dispatch action on lifecycle events.
+version: 0.0.1
+author:
+homepage:
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  redux: ^3.0.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
