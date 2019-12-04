@@ -7,17 +7,17 @@ class LifeCycleDispatcher<S> extends StatefulWidget {
   const LifeCycleDispatcher({
     @required this.store,
     @required this.child,
-    this.onInitDispatches = const [],
-    this.onDisposeDispatches = const [],
+    this.onInitDispatch = const [],
+    this.onDisposeDispatch = const [],
     Key key,
   })  : assert(store != null),
-        assert(onInitDispatches != null),
-        assert(onDisposeDispatches != null),
+        assert(onInitDispatch != null),
+        assert(onDisposeDispatch != null),
         super(key: key);
 
   final Store<S> store;
-  final List<DispatchCallback<S>> onInitDispatches;
-  final List<DispatchCallback<S>> onDisposeDispatches;
+  final List<DispatchCallback<S>> onInitDispatch;
+  final List<DispatchCallback<S>> onDisposeDispatch;
   final Widget child;
 
   @override
@@ -29,7 +29,7 @@ class _LifeCycleDispatcherState extends State<LifeCycleDispatcher> {
   void initState() {
     super.initState();
 
-    for (final dispatch in widget.onInitDispatches) {
+    for (final dispatch in widget.onInitDispatch) {
       dispatch(widget.store);
     }
   }
@@ -37,7 +37,7 @@ class _LifeCycleDispatcherState extends State<LifeCycleDispatcher> {
   @override
   void dispose() {
     super.dispose();
-    for (final dispatch in widget.onDisposeDispatches) {
+    for (final dispatch in widget.onDisposeDispatch) {
       dispatch(widget.store);
     }
   }

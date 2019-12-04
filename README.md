@@ -1,4 +1,4 @@
-# src
+# life_cycle_dispatcher
 
 A widget with Redux which can dispatch action on lifecycle events.
 
